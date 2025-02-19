@@ -1,10 +1,11 @@
-import './App.scss'
+import './App.scss';
+import Header from './components/header/header';
 
 function App() {
 
   return (
     <>
-      <span className='style__works'>works!</span>
+      <Header></Header>
     </>
   )
 }
