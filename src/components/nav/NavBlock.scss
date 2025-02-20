@@ -1,0 +1,91 @@
+.nav {
+  border-right: 1px solid #d5d8dd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__list {
+    border-right: 1px solid #d5d8dd;
+    width: 280px;
+  }
+
+  &__filter {
+    border: 1px solid #d5d8dd;
+    border-radius: 4px;
+    padding: 0 8px;
+    width: 208px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__filter-form, &__filter-input {
+    width: 100%;
+  }
+
+  &__filter-input {
+    border: none;
+    outline: none;
+  }
+
+  &__filter-input::placeholder {
+    font-size: 14px;
+    line-height: 143%;
+    color: #abb1ba;
+  }
+
+  &__filter-icon {
+    display: flex;
+  }
+
+  &__filter-default-button{
+    border: 1px solid #d5d8dd;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__filter-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    box-sizing: border-box;
+    gap: 8px;
+    border-bottom: 1px solid #d5d8dd;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__option {
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 16px;
+    font-size: 14px;
+    line-height: 143%;
+    color: #2e3238;
+  }
+}
+
+.nav-button {
+  height: 56px;
+  width: 56px;
+  border: none;
+}
+
+.active > svg > path{
+  fill: #005999;
+}
