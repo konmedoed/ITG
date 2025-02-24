@@ -1,6 +1,6 @@
 import { navListButton, navFavoriteButton, filterIcon, filterDefaultIcon, buttonPointer } from "../../services/SVGs";
 import './NavBlock.scss';
-import { formPlug } from "../../services/utilites";
+import { formPlug } from "../../services/utilities";
 
 export default function NavBlock(){
     function buttonCreator(text:string, id:string) {

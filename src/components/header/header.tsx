@@ -1,7 +1,7 @@
 import './header.scss';
 import {setupButton, searchIcon, logo} from '../../services/SVGs';
 import { UserData } from '../../services/Types';
-import { formPlug } from '../../services/utilites';
+import { formPlug } from '../../services/utilities';
 
 export default function Header({userData}:UserData) {
 
@@ -17,7 +17,7 @@ export default function Header({userData}:UserData) {
           </form>
           <div className="header__search-icon">{searchIcon()}</div>
         </div>
-        <button className="header__user">
+        <button type='button' className="header__user">
           <div>
             <img className="header__avatar" src={userData.src} alt="" />
           </div>
@@ -26,7 +26,7 @@ export default function Header({userData}:UserData) {
           </div>
           
         </button>
-        <button className='header__setup-button'>
+        <button type='button' className='header__setup-button'>
             {setupButton()}
           </button>
       </div>

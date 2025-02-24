@@ -1,23 +1,17 @@
 import './App.scss';
 import Header from './components/header/header';
-
-import photo from './assets/user.png';
 import NavBlock from './components/nav/NavBlock';
-import { TaskPage } from './components/task-page/TaskPage';
+import { FormPage } from './components/form-page/FormPage';
+import { taskData, userData } from './data-plug';
 
 function App() {
 
   return (
     <>
-      <Header userData={
-        {
-          src: photo,
-          name: 'Максим Галактионов'
-        }
-      }/>
+      <Header userData={userData}/>
       <main className="main">
         <NavBlock/>
-        <TaskPage/>
+        <FormPage taskData={taskData()}/>
       </main>
     </>
   )
