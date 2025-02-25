@@ -1,5 +1,10 @@
 .form-page {
 
+  &__form {
+    height: 100%;
+    overflow: hidden;
+  }
+
   &__sub-heading {
     padding: 0 16px;
     width: 100%;
@@ -7,6 +12,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.04);
   }
 
   &__create-wrapper {
@@ -53,15 +61,29 @@
   }
 
   &__padding-form {
-    padding: 0 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    height: calc(100vh - 48px - 64px);
+    overflow: scroll;
+  }
+
+  &__box-shadow-wrapper {
+    box-shadow: 0 4px 4px 0 white inset;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__padding-form-scroll-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px 16px 16px;
   }
 
   &__heading {
     -webkit-line-clamp: 1;
-    line-clamp: 1;
+    //line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden; 

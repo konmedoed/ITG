@@ -140,7 +140,7 @@ export function FormPage({taskData}:{taskData:TaskData}){
   return(
     <>
       <section className="form-page">
-        <form action="" onSubmit={formPlug}>
+        <form className="form-page__form" action="" onSubmit={formPlug}>
           <div className="form-page__sub-heading">
             <div className="form-page__create-wrapper">
               <p className="form-page__create-heading text-style_first">Подзадача</p>
@@ -152,154 +152,160 @@ export function FormPage({taskData}:{taskData:TaskData}){
             </div>
           </div>
           <div className="form-page__padding-form">
-            <h2 className="form-page__heading text-style_second">
-              {taskData.taskId} {taskData.subject}
-            </h2>
+            <div className="form-page__box-shadow-wrapper"> {/* скролл был сделан наспех, поэтому такая дикая вложенность*/}
+              <div className="form-page__padding-form-scroll-wrapper">
+                <h2 className="form-page__heading text-style_second">
+                  {taskData.taskId} {taskData.subject}
+                </h2>
 
-            <div className="form-page__theme-status">
-              <label htmlFor="subject" className="form-page__theme-wrapper">
-                <div>
-                  <span className="form-page__star text-style_first">*</span>
-                  <span className="form-page__input-title text-style_first">Тема</span>
-                </div>
-                <input type="text" name="" id="subject" className="form-page__theme-input text-style_first" defaultValue={taskData.subject} onChange={formPlug}/>
-              </label>
-              <label htmlFor="status" className="form-page__status-wrapper">
-                  <span className="form-page__input-title text-style_first">Статус</span>
-                  <select name="" id="status" defaultValue={taskData.status} className="form-page__status-select text-style_first">
-                    {selectCreator(Object.values(Status))}
-                  </select>
-              </label>
-            </div>
-
-            <div className="form-page__description-product">
-              <label htmlFor="description" className="form-page__description-wrapper">
-                <span className="form-page__input-title text-style_first">Описание</span>
-                <input type="text" name="" id="description" className="form-page__description-input" defaultValue={taskData.description} onChange={formPlug}/>
-              </label>
-              <label htmlFor="product" className="form-page__product-wrapper">
-                  <span className="form-page__input-title text-style_first">Продукт</span>
-                  <select name="" id="product" className="form-page__product-select" defaultValue={taskData.product}>
-                    {selectCreator(Object.values(Product))}
-                  </select>
-              </label>
-            </div>
-
-            <div className="form-page__note-priority">
-              <label htmlFor="work-note" className="form-page__work-note-wrapper">
-                <div>
-                  <span className="form-page__star text-style_first">*</span>
-                  <span className="form-page__input-title text-style_first">Рабочие заметки</span>
-                </div>
-                <input type="text" name="" id="work-note" className="form-page__note-input" defaultValue={taskData.workingNote} onChange={formPlug}/>
-              </label>
-              <label htmlFor="priority" className="form-page__priority-wrapper">
-                  <span className="form-page__input-title text-style_first">Приоритет</span>
-                  <select name="" id="priority" className="form-page__priority-select" defaultValue={taskData.priority}>
-                    {selectCreator(Object.values(Priority))}
-                  </select>
-              </label>
-            </div>
-
-            <div className="form-page__responsible-team">
-              <div className="form-page__responsible-wrapper">
-                <span className="form-page__input-title text-style_first">Ответственный</span>
-                <div className="form-page__responsible-input-wrapper">
-                  <div className="form-page__responsible-input">
-                    <div className="form-page__responsible-fake-input">
-                      {createCardsRespPersons()}
+                <div className="form-page__theme-status">
+                  <label htmlFor="subject" className="form-page__theme-wrapper">
+                    <div>
+                      <span className="form-page__star text-style_first">*</span>
+                      <span className="form-page__input-title text-style_first">Тема</span>
                     </div>
-                    <button className="form-page__clear-button" onClick={() => setResponsible([])}>
-                      {clearInputIcon()}
-                    </button>
-                  </div>
-                  <button className="form-page__add-button">{addIcon()}</button>
-                  <button className="form-page__search-button">{searchTaskFormIcon()}</button>
+                    <input type="text" name="" id="subject" className="form-page__theme-input text-style_first" defaultValue={taskData.subject} onChange={formPlug}/>
+                  </label>
+                  <label htmlFor="status" className="form-page__status-wrapper">
+                      <span className="form-page__input-title text-style_first">Статус</span>
+                      <select name="" id="status" defaultValue={taskData.status} className="form-page__status-select text-style_first">
+                        {selectCreator(Object.values(Status))}
+                      </select>
+                  </label>
                 </div>
-              </div>
-              <div className="form-page__team-wrapper">
-                <span className="form-page__input-title text-style_first">Группа</span>
-                <div className="form-page__team-input-wrapper">
-                  <div className="form-page__team-input">
-                    <div className="form-page__team-fake-input">
-                      {createTeamCards()}
+
+                <div className="form-page__description-product">
+                  <label htmlFor="description" className="form-page__description-wrapper">
+                    <span className="form-page__input-title text-style_first">Описание</span>
+                    <input type="text" name="" id="description" className="form-page__description-input" defaultValue={taskData.description} onChange={formPlug}/>
+                  </label>
+                  <label htmlFor="product" className="form-page__product-wrapper">
+                      <span className="form-page__input-title text-style_first">Продукт</span>
+                      <select name="" id="product" className="form-page__product-select" defaultValue={taskData.product}>
+                        {selectCreator(Object.values(Product))}
+                      </select>
+                  </label>
+                </div>
+
+                <div className="form-page__note-priority">
+                  <label htmlFor="work-note" className="form-page__work-note-wrapper">
+                    <div>
+                      <span className="form-page__star text-style_first">*</span>
+                      <span className="form-page__input-title text-style_first">Рабочие заметки</span>
                     </div>
-                    <button className="form-page__clear-button" onClick={() => setTeam([])}>
-                      {clearInputIcon()}
-                    </button>
-                  </div>
-                  <button className="form-page__add-button">{addIcon()}</button>
-                  <button className="form-page__search-button">{searchTaskFormIcon()}</button>
+                    <input type="text" name="" id="work-note" className="form-page__note-input" defaultValue={taskData.workingNote} onChange={formPlug}/>
+                  </label>
+                  <label htmlFor="priority" className="form-page__priority-wrapper">
+                      <span className="form-page__input-title text-style_first">Приоритет</span>
+                      <select name="" id="priority" className="form-page__priority-select" defaultValue={taskData.priority}>
+                        {selectCreator(Object.values(Priority))}
+                      </select>
+                  </label>
                 </div>
-              </div>
-            </div>
 
-            <div className="form-page__comment-wrapper">
-              <label htmlFor="comment" className="form-page__comment-wrapper">
-                <span className="form-page__input-title text-style_first">Комментарии</span>
-                <input type="text" name="" id="comment" className="form-page__comment-input" defaultValue={taskData.comment} onChange={formPlug}/>
-              </label>
-            </div>
-
-            <div className="form-page__agreeing-wrapper">
-              <h3 className="form-page__input-title text-style_first">Согласующие</h3>
-              <div className="form-page__agreeing-input-wrapper">
-                <div className="form-page__agreeing-input">
-                  <div className="form-page__agreeing-fake-input">
-                    {createCardsAgreeingPersons()}
-                  </div>
-                  <button className="form-page__clear-button" onClick={() => setAgreeing([])}>
-                    {clearInputIcon()}
-                  </button>
-                </div>
-                <button className="form-page__add-button">{addIcon()}</button>
-                <button className="form-page__search-button">{searchTaskFormIcon()}</button>
-              </div>
-            </div>
-
-            <div className="form-page__dates">
-              <div className="form-page__opened-wrapper">
-                <span className="form-page__input-title text-style_first">Когда открыто</span>
-                <Datepicker minDate={new Date("2024-01-01")} selected={openedDate} onChange={date => setOpenedDateHandler(date)} customInput={customOpenedDateInput()}/>
-              </div>
-              <div className="form-page__created-wrapper">
-                <span className="form-page__input-title text-style_first">Когда создано</span>
-                <Datepicker minDate={new Date("2024-01-01")} selected={closedDate} onChange={date => setClosedDateHandler(date)} customInput={customClosedDateInput()}/>
-              </div>
-            </div>
-
-            <div className="form-page__pers-opened-created">
-              <div className="form-page__pers-opened-wrapper">
-                <span className="form-page__input-title text-style_first">Кем открыто</span>
-                <div className="form-page__pers-opened-input-wrapper">
-                  <div className="form-page__pers-opened-input">
-                    <div className="form-page__pers-opened-fake-input">
-                      {createOpenPersons()}
+                <div className="form-page__responsible-team">
+                  <div className="form-page__responsible-wrapper">
+                    <span className="form-page__input-title text-style_first">Ответственный</span>
+                    <div className="form-page__responsible-input-wrapper">
+                      <div className="form-page__responsible-input">
+                        <div className="form-page__responsible-fake-input">
+                          {createCardsRespPersons()}
+                        </div>
+                        <button className="form-page__clear-button" onClick={() => setResponsible([])}>
+                          {clearInputIcon()}
+                        </button>
+                      </div>
+                      <button className="form-page__add-button">{addIcon()}</button>
+                      <button className="form-page__search-button">{searchTaskFormIcon()}</button>
                     </div>
-                    <button className="form-page__clear-button" onClick={() => setOpenPerson([])}>
-                      {clearInputIcon()}
-                    </button>
                   </div>
-                  <button className="form-page__add-button">{addIcon()}</button>
-                  <button className="form-page__search-button">{searchTaskFormIcon()}</button>
-                </div>
-              </div>
-              <div className="form-page__pers-created-wrapper">
-                <span className="form-page__input-title text-style_first">Кем создано</span>
-                <div className="form-page__pers-created-input-wrapper">
-                  <div className="form-page__pers-created-input">
-                    <div className="form-page__pers-created-fake-input">
-                      {createCreatePersons()}
+                  <div className="form-page__team-wrapper">
+                    <span className="form-page__input-title text-style_first">Группа</span>
+                    <div className="form-page__team-input-wrapper">
+                      <div className="form-page__team-input">
+                        <div className="form-page__team-fake-input">
+                          {createTeamCards()}
+                        </div>
+                        <button className="form-page__clear-button" onClick={() => setTeam([])}>
+                          {clearInputIcon()}
+                        </button>
+                      </div>
+                      <button className="form-page__add-button">{addIcon()}</button>
+                      <button className="form-page__search-button">{searchTaskFormIcon()}</button>
                     </div>
-                    <button className="form-page__clear-button" onClick={() => setCreatePerson([])}>
-                      {clearInputIcon()}
-                    </button>
                   </div>
-                  <button className="form-page__add-button">{addIcon()}</button>
-                  <button className="form-page__search-button">{searchTaskFormIcon()}</button>
+                </div>
+
+                <div className="form-page__comment-wrapper">
+                  <label htmlFor="comment" className="form-page__comment-wrapper">
+                    <span className="form-page__input-title text-style_first">Комментарии</span>
+                    <input type="text" name="" id="comment" className="form-page__comment-input" defaultValue={taskData.comment} onChange={formPlug}/>
+                  </label>
+                </div>
+
+                <div className="form-page__agreeing-wrapper">
+                  <h3 className="form-page__input-title text-style_first">Согласующие</h3>
+                  <div className="form-page__agreeing-input-wrapper">
+                    <div className="form-page__agreeing-input">
+                      <div className="form-page__agreeing-fake-input">
+                        {createCardsAgreeingPersons()}
+                      </div>
+                      <button className="form-page__clear-button" onClick={() => setAgreeing([])}>
+                        {clearInputIcon()}
+                      </button>
+                    </div>
+                    <button className="form-page__add-button">{addIcon()}</button>
+                    <button className="form-page__search-button">{searchTaskFormIcon()}</button>
+                  </div>
+                </div>
+
+                <div className="form-page__dates">
+                  <div className="form-page__opened-wrapper">
+                    <span className="form-page__input-title text-style_first">Когда открыто</span>
+                    <Datepicker minDate={new Date("2024-01-01")} selected={openedDate} onChange={date => setOpenedDateHandler(date)} customInput={customOpenedDateInput()}/>
+                  </div>
+                  <div className="form-page__created-wrapper">
+                    <span className="form-page__input-title text-style_first">Когда создано</span>
+                    <Datepicker minDate={new Date("2024-01-01")} selected={closedDate} onChange={date => setClosedDateHandler(date)} customInput={customClosedDateInput()}/>
+                  </div>
+                </div>
+
+                <div className="form-page__pers-opened-created">
+                  <div className="form-page__pers-opened-wrapper">
+                    <span className="form-page__input-title text-style_first">Кем открыто</span>
+                    <div className="form-page__pers-opened-input-wrapper">
+                      <div className="form-page__pers-opened-input">
+                        <div className="form-page__pers-opened-fake-input">
+                          {createOpenPersons()}
+                        </div>
+                        <button className="form-page__clear-button" onClick={() => setOpenPerson([])}>
+                          {clearInputIcon()}
+                        </button>
+                      </div>
+                      <button className="form-page__add-button">{addIcon()}</button>
+                      <button className="form-page__search-button">{searchTaskFormIcon()}</button>
+                    </div>
+                  </div>
+                  <div className="form-page__pers-created-wrapper">
+                    <span className="form-page__input-title text-style_first">Кем создано</span>
+                    <div className="form-page__pers-created-input-wrapper">
+                      <div className="form-page__pers-created-input">
+                        <div className="form-page__pers-created-fake-input">
+                          {createCreatePersons()}
+                        </div>
+                        <button className="form-page__clear-button" onClick={() => setCreatePerson([])}>
+                          {clearInputIcon()}
+                        </button>
+                      </div>
+                      <button className="form-page__add-button">{addIcon()}</button>
+                      <button className="form-page__search-button">{searchTaskFormIcon()}</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            
+            
           </div>
         </form>
       </section>

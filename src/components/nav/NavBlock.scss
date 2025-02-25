@@ -67,6 +67,10 @@
     flex-direction: column;
   }
 
+  &__list-wrapper {
+    overflow: scroll;
+  }
+
   &__option {
     height: 40px;
     border: none;

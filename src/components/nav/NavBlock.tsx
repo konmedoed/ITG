@@ -34,9 +34,12 @@ export default function NavBlock(){
             {filterDefaultIcon()}
           </button>
         </div>
-        <div className="nav__list">
-          {buttonsListCreator()}
+        <div className="nav__list-wrapper">
+          <div className="nav__list">
+            {buttonsListCreator()}
+          </div>
         </div>
+        
       </nav>
     </div>  
   )
