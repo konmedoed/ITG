@@ -1,4 +1,11 @@
-.form-page {
+.sub-task {
+  border-radius: 4px;
+  padding: 0px 0px 16px 0px;
+  width: 800px;
+  max-width: 800px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16), 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  height: fit-content;
 
   &__sub-heading {
     padding: 0 16px;
@@ -20,14 +27,6 @@
     font-size: 20px;
   }
 
-  &__create-button {
-    border: 1px solid #d5d8dd;
-    border-radius: 4px;
-    width: 82px;
-    font-weight: 600;
-    text-align: center;
-  }
-
   &__save-block {
     height: 32px; 
     display: flex;
@@ -44,12 +43,11 @@
     color: #fff;
   }
 
-  &__save-exit-button {
+  &__cancel-button {
     border: 1px solid #d5d8dd;
     border-radius: 4px;
-    width: 163px;
-    font-weight: 600;
-    text-align: center;
+    width: 96px;
+    height: 32px;
   }
 
   &__padding-form {
@@ -71,15 +69,9 @@
     font-weight: 600;
   }
 
-  &__theme-status, &__description-product, &__note-priority, &__responsible-team, &__dates, &__pers-opened-created, &__dates {
-    display: flex;
-    gap: 16px;
-  }
-
   &__theme-wrapper, &__status-wrapper, &__description-wrapper, &__product-wrapper, &__work-note-wrapper, &__priority-wrapper, &__responsible-wrapper, &__team-wrapper, &__pers-opened-wrapper, &__pers-created-wrapper, &__opened-wrapper, &__created-wrapper {
     display: flex;
     flex-direction: column;
-    width: 50%;
   }
 
   &__star {
@@ -173,18 +165,5 @@
 
   input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
-  }
-
-  &__sub-task {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(11, 12, 14, 0.4);
-    display: flex;
-    justify-content: center;
-    padding: 16px 0;
-    overflow: scroll;
   }
 }
