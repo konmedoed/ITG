@@ -1,10 +1,18 @@
-import './App.scss'
+import './App.scss';
+import Header from './components/header/header';
+import NavBlock from './components/nav/NavBlock';
+import { FormPage } from './components/form-page/FormPage';
+import { taskData, userData } from './data-plug';
 
 function App() {
 
   return (
     <>
-      <span className='style__works'>works!</span>
+      <Header userData={userData}/>
+      <main className="main">
+        <NavBlock/>
+        <FormPage taskData={taskData()}/>
+      </main>
     </>
   )
 }

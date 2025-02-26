@@ -1,0 +1,219 @@
+.sub-task {
+  border-radius: 4px;
+  padding: 0px 0px 16px 0px;
+  width: 800px;
+  max-width: 800px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16), 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  height: fit-content;
+
+  &__sub-heading {
+    padding: 0 16px;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__create-wrapper {
+    height: 32px;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__create-heading {
+    font-size: 20px;
+  }
+
+  &__save-block {
+    height: 32px; 
+    display: flex;
+    gap: 4px;
+  }
+
+  &__save-block-mobile {
+    display: none;
+  }
+
+  &__save-button {
+    border-radius: 4px;
+    width: 101px; 
+    background: #0078cf; 
+    border: none;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__cancel-button {
+    border: 1px solid #d5d8dd;
+    border-radius: 4px;
+    width: 96px;
+    height: 32px;
+  }
+
+  &__close-button {
+    border: 1px solid #d5d8dd;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    display: none;
+  }
+
+  &__padding-form {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__heading {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden; 
+  }
+
+  &__input-title {
+    font-weight: 600;
+  }
+
+  &__theme-wrapper, &__status-wrapper, &__description-wrapper, &__product-wrapper, &__work-note-wrapper, &__priority-wrapper, &__responsible-wrapper, &__team-wrapper, &__pers-opened-wrapper, &__pers-created-wrapper, &__opened-wrapper, &__created-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__star {
+    font-weight: 600;
+    color: #b21f00;
+    margin-right: 4px;
+  }
+
+  &__theme-input, &__status-select, &__note-input, &__priority-select, &__description-input, &__product-select, &__responsible-input, &__team-input, &__comment-input, &__agreeing-input, &__pers-opened-input, &__pers-created-input, &__input-date {
+    border: 1px solid #d5d8dd;
+    border-radius: 4px;
+    width: 100%;
+    height: 32px;
+    padding: 0 8px;
+    background: #fcfcfd;
+  }
+
+  &__agreeing-input {
+    height: auto;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+
+  &__responsible-input-wrapper, &__team-input-wrapper, &__agreeing-input-wrapper, &__pers-opened-input-wrapper, &__pers-created-input-wrapper, &__date-input-wrapper {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__responsible-input, &__team-input, &__agreeing-input, &__pers-opened-input, &__pers-created-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__add-button, &__search-button, &__date-button {
+    border: 1px solid #d5d8dd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__responsible-fake-input, &__team-fake-input, &__agreeing-fake-input, &__pers-opened-fake-input, &__pers-created-fake-input {
+    flex-grow: 1;
+    background: #fcfcfd;
+  }
+
+  &__agreeing-fake-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 4px 0;
+  }
+
+  &__clear-button {
+    border: none;
+    height: 16px;
+    align-self: start;
+    margin-top: 8px;
+  }
+
+  &__resp-person, &__team, &__agreeing-person, &__open-person, &__create-person {
+    border: 1px solid #99d5ff;
+    border-radius: 4px;
+    padding: 0 8px;
+    width: fit-content;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    background: #e5f4ff;
+    gap: 8px;
+  }
+
+  &__comment-wrapper, &__agreeing-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__delete-agreeing {
+    border: none;
+    height: 16px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sub-task {
+    margin: 20px 16px 16px 16px;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .sub-task {
+    margin: 0;
+
+    &__save-block {
+      display: none;
+    }
+
+    &__save-block-mobile {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__save-button {
+      width: 100%;
+      height: 32px;
+    }
+
+    &__cancel-button {
+      width: 100%;
+    }
+
+    &__close-button {
+      display: flex;
+    }
+  }
+}
