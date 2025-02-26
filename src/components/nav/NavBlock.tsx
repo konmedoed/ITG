@@ -22,7 +22,7 @@ export default function NavBlock(){
         <button className='nav__all-list nav-button active'>{navListButton()}</button>
         <button className='nav__favorite nav-button'>{navFavoriteButton()}</button>
       </nav>
-      <nav className="nav__list">
+      <nav className="nav__block">
         <div className="nav__filter-wrapper">
           <label className="nav__filter">
             <form className="nav__filter-form" action="" onSubmit={formPlug}>

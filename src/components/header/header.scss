@@ -12,6 +12,10 @@
     
   }
 
+  &__nav-mobile-button {
+    display: none;
+  }
+
   &__search-avatar-set {
     display: flex;
     gap: 8px;
@@ -72,5 +76,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .header {
+
+    &__search-avatar-set {
+      gap: 16px;
+    }
+
+    &__logo, &__search, &__username {
+      display: none;
+    }
+
+    &__nav-mobile-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 32px;
+      width: 32px;
+      border: none;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import './header.scss';
-import {setupButton, searchIcon, logo} from '../../services/SVGs';
+import {setupButton, searchIcon, logo, navMobileIcon} from '../../services/SVGs';
 import { UserData } from '../../services/Types';
 import { formPlug } from '../../services/utilities';
 
@@ -10,6 +10,9 @@ export default function Header({userData}:UserData) {
       <div className="header__logo">
         {logo()}
       </div>
+      <button className="header__nav-mobile-button">
+        {navMobileIcon()}
+      </button>
       <div className="header__search-avatar-set">
         <div className="header__search">
           <form className="header__form" action="" onSubmit={formPlug}>

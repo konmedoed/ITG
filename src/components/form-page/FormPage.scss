@@ -211,3 +211,54 @@
     overflow: scroll;
   }
 }
+
+@media (max-width: 991px) {
+  .form-page {
+    &__theme-status, &__description-product, &__note-priority, &__responsible-team, &__dates, &__pers-opened-created, &__dates {
+      flex-direction: column;
+    }
+
+    &__theme-wrapper, &__status-wrapper, &__description-wrapper, &__product-wrapper, &__work-note-wrapper, &__priority-wrapper, &__responsible-wrapper, &__team-wrapper, &__pers-opened-wrapper, &__pers-created-wrapper, &__opened-wrapper, &__created-wrapper {
+      width: 100%;
+    }
+
+    &__sub-task {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .form-page {
+    
+  }
+}
+
+@media (max-width: 767.99px) {
+  .form-page {
+    &__save-block {
+      display: none;
+    }
+
+    &__create-wrapper {
+      width: 100%;
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    &__agreeing-person {
+      max-width: 152px;
+    }
+
+    &__agreeing-person > span, &__resp-person > span {
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+}

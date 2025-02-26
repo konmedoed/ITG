@@ -9,6 +9,8 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
     border-right: 1px solid #d5d8dd;
     width: 280px;
   }
@@ -62,7 +64,7 @@
     border-bottom: 1px solid #d5d8dd;
   }
 
-  &__list {
+  &__block {
     display: flex;
     flex-direction: column;
   }
@@ -92,4 +94,18 @@
 
 .active > svg > path{
   fill: #005999;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav {
+    &__block {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767.99px) {
+  .nav__wrapper {
+    display: none; //не ясно в каком виде будет nav, поэтому просто скрыл для соответствия макету
+  }
 }

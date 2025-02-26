@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { addIcon, calendarIcon, clearInputIcon, deleteAgreeingPersonIcon, searchTaskFormIcon } from "../../services/SVGs";
+import { addIcon, calendarIcon, clearInputIcon, closeButton, deleteAgreeingPersonIcon, searchTaskFormIcon } from "../../services/SVGs";
 import { Priority, Product, Status, TaskData } from "../../services/Types";
 import { formPlug, selectCreator } from "../../services/utilities";
 import Datepicker from 'react-datepicker';
@@ -154,6 +154,7 @@ export function SubTask({taskData, closeWindow}:{taskData:TaskData, closeWindow:
             <button type="submit" className="sub-task__save-button text-style_first">Сохранить</button>
             <button type="button" className="sub-task__cancel-button" onClick={closeWindow}>Отменить</button>
           </div>
+          <button type="button" className="sub-task__close-button" onClick={closeWindow}>{closeButton()}</button>
         </div>
         <div className="sub-task__padding-form">
           <h2 className="sub-task__heading text-style_second">Новая запись
@@ -285,7 +286,12 @@ export function SubTask({taskData, closeWindow}:{taskData:TaskData, closeWindow:
               <button type="button" className="sub-task__search-button">{searchTaskFormIcon()}</button>
             </div>
           </div>
+          <div className="sub-task__save-block-mobile">
+            <button type="submit" className="sub-task__save-button text-style_first">Сохранить</button>
+            <button type="button" className="sub-task__cancel-button" onClick={closeWindow}>Отменить</button>
+          </div>
         </div>
+        
       </form>
     </section>
   )
